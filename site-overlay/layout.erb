@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title><%=app_name%></title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="/smart/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/smart/static/open-iconic/css/open-iconic-bootstrap.min.css">
+
+    <link rel="stylesheet" href="/smart/static/css/styles.css">
+    <link rel="stylesheet" href="/site.css">
+    
+  </head>
+  <body>
+    <header>
+        <div class="site-header">
+            <div  class="container">
+                <a  class="site-logo" href="https://www.healthit.gov/" rel="external" title="HealthIT.gov">
+                    <img alt="HealthIT.gov" src="/healthit.gov.logo.png">
+                </a>
+            </div>
+        </div>
+        <!--template bindings={}-->
+    </header>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="/smart/"><%=app_name.upcase%></a>
+        <!-- Navbar content -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://github.com/fhir-crucible/crucible_smart_app/">Documentation</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <%= yield %>
+    <footer class="footer">
+      <div class="container row">
+        <div class="col-sm text-left">
+          <a target="_blank" href="https://github.com/fhir-crucible/crucible_smart_app">Open Source</a>
+        </div>
+        <div class="col-sm text-center">
+          <a target="_blank" href="https://github.com/fhir-crucible/crucible_smart_app/issues">Issues</a>
+        </div>
+        <div class="col-sm text-right">
+          Version <%= version %>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Tether.js, then Popper.js, then Bootstrap JS -->
+    <script src="/smart/static/js/jquery-3.2.1.min.js"></script>
+    <script src="/smart/static/js/tether.min.js"></script>
+    <script src="/smart/static/js/popper.min.js"></script>
+    <script src="/smart/static/js/bootstrap.min.js"></script>
+    <script src="/smart/static/js/app.js"></script>
+
+  </body>
+</html>
