@@ -1,0 +1,3 @@
+[submodule "crucible_smart_app"]
+	path = crucible_smart_app
+	url = https://github.com/fhir-crucible/crucible_smart_app.git
