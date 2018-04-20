@@ -12,8 +12,8 @@ services:
       - ./site-overlay/landing.erb:/var/www/crucible_smart_app/views/landing.erb
     # run the application
     working_dir: /var/www/crucible_smart_app
-    #command: bundle exec ruby app.rb
-    command: unicorn -c deployment-files/unicorn.rb -E development
+    command: bundle exec ruby app.rb
+    #command: unicorn -c deployment-files/unicorn.rb -E development
   nginx_server:
     image: nginx
     volumes:
