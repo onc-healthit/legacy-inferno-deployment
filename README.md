@@ -8,7 +8,7 @@ The core crucible project is loaded through a git submodule. This submodule is t
 
 The project contains a `Makefile` which allows simpler execution of commands in the setup guide. It's not required to use this file and the direct commands are available by reading the `Makefile`. 
 
-The files in `static-assets` are served directly by the NGINX server and are not available to the Ruby server. This directory is mapped by the docker compose file.
+The files in `static-assets` are served directly by the NGINX server and are not available to the Ruby server. This directory is mapped by the docker compose file. These files are all under the `site/` directory within here to avoid conflicts with the main application.
 
 The files in `site-overlay` are mapped into the Ruby server and become part of the running ruby application. These files are mapped individually by the docker compose file.
 
