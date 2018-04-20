@@ -9,6 +9,7 @@ services:
       - ./crucible_smart_app/:/var/www/crucible_smart_app
       # SITE-specific overlays
       - ./site-overlay/layout.erb:/var/www/crucible_smart_app/views/layout.erb
+      - ./site-overlay/landing.erb:/var/www/crucible_smart_app/views/landing.erb
     # run the application
     working_dir: /var/www/crucible_smart_app
     #command: bundle exec ruby app.rb
