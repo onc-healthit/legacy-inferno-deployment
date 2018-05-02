@@ -54,7 +54,7 @@ Note that downloading an export of the repository is not recommended as the subm
 
 The rest of these commands are from inside of the checkout directory.
 
-`cd crucible_smart_app`
+`cd crucible_site_overlay`
 
 ### Update the Submodule
 
