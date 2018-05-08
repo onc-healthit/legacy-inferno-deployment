@@ -2,23 +2,22 @@ version: '3'
 services:
   # the main ruby server
   ruby_server:
-    image: crucible_smart_app
+    image: inferno
     # map the project directory into the running container
     volumes:
       # base application
-      - ./crucible_smart_app/:/var/www/crucible_smart_app
+      - ./inferno/:/var/www/inferno/
       # SITE-specific overlays
-      - ./site-overlay/layout.erb:/var/www/crucible_smart_app/views/layout.erb
-      - ./site-overlay/landing.erb:/var/www/crucible_smart_app/views/landing.erb
+      - ./site-overlay/layout.erb:/var/www/inferno/views/layout.erb
+      - ./site-overlay/landing.erb:/var/www/inferno/views/landing.erb
     # run the application
-    working_dir: /var/www/crucible_smart_app
+    working_dir: /var/www/inferno
     command: bundle exec ruby app.rb
-    #command: unicorn -c deployment-files/unicorn.rb -E development
   nginx_server:
     image: nginx
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./static-assets/:/var/www/crucible_smart_app/public/
+      - ./static-assets/:/var/www/inferno/public/
     ports:
       - "80:80"
     command: [nginx, '-g', 'daemon off;']
