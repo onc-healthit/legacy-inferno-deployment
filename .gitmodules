@@ -1,3 +1,4 @@
 [submodule "crucible_smart_app"]
 	path = inferno
-	url = https://github.com/fhir-crucible/crucible_smart_app.git
+	url = https://github.com/siteadmin/inferno.git
+
