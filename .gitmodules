@@ -1,4 +1,4 @@
-[submodule "crucible_smart_app"]
+[submodule "inferno"]
 	path = inferno
 	url = https://github.com/siteadmin/inferno.git
 
