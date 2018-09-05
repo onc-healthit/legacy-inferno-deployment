@@ -95,3 +95,15 @@ The overlay can be updated by pulling from the git repository where it was first
 `git pull`
 
 From here, follow the instructions to update the submodule, build the docker image, and start the server as above.
+
+## Routine Redeployment Instructions
+
+For routine redeployments, the following commands should be run:
+
+```bash
+docker-compose down
+git pull
+make git_update
+make inferno_docker_rebuild
+docker-compose up -d
+```
