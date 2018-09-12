@@ -8,11 +8,11 @@ services:
       # base application
       - ./inferno/:/var/www/inferno/
       # SITE-specific overlays
-      - ./site-overlay/layout.erb:/var/www/inferno/views/layout.erb
-      - ./site-overlay/landing.erb:/var/www/inferno/views/landing.erb
+      - ./site-overlay/layout.erb:/var/www/inferno/lib/app/views/layout.erb
+      - ./site-overlay/landing.erb:/var/www/inferno/lib/app/views/landing.erb
     # run the application
     working_dir: /var/www/inferno
-    command: bundle exec ruby app.rb
+    command: bundle exec rackup -o 0.0.0.0
   nginx_server:
     image: nginx
     volumes:
