@@ -6,3 +6,9 @@ git_update:
 
 inferno_docker_rebuild:
 	docker build --no-cache -t inferno inferno
+
+inferno_clean_db:
+	docker-compose down
+	rm -f inferno/data/*.db
+	docker-compose up -d
+
