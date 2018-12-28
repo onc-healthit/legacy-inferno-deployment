@@ -76,6 +76,10 @@ Docker will cache the build of this image and make it available to docker-compos
 
 `make inferno_docker_rebuild`
 
+## Set up SSL certificates
+
+The nginx server is set up to point to an inferno.crt and inferno.key file for its SSL certificate and key. Place these files into /etc/ssl/certs/inferno. You can also change the location of the certs directory in the docker-compose.yml file.
+
 ## Start the Server
 
 The server can be started by using docker compose, which boots both the Ruby server and the NGINX server to front it. 
