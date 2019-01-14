@@ -1,5 +1,6 @@
 inferno_docker_build:
 	docker build -t inferno inferno
+	docker build -t inferno_community inferno_community
 	
 git_update:
 	git submodule update --init --remote --merge
