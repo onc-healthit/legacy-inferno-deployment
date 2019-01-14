@@ -10,6 +10,8 @@ services:
       # SITE-specific overlays
       - ./site-overlay/layout.erb:/var/www/inferno/lib/app/views/layout.erb
       - ./site-overlay/landing.erb:/var/www/inferno/lib/app/views/landing.erb
+      # config file
+      - ./inferno-config.yml:/var/www/inferno/config.yml
     # run the application
     working_dir: /var/www/inferno
     command: bundle exec rackup -o 0.0.0.0
@@ -23,6 +25,8 @@ services:
       # SITE-specific overlays
       - ./site-overlay/layout.erb:/var/www/inferno_community/lib/app/views/layout.erb
       - ./site-overlay/landing.erb:/var/www/inferno_community/lib/app/views/landing.erb
+      # config file
+      - ./community-config.yml:/var/www/inferno_community/config.yml
     # run the application
     working_dir: /var/www/inferno_community
     command: bundle exec rackup -o 0.0.0.0
