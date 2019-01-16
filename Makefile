@@ -7,3 +7,4 @@ git_update:
 
 inferno_docker_rebuild:
 	docker build --no-cache -t inferno inferno
+	docker build --no-cache -t inferno_community inferno_community
