@@ -1,28 +1,96 @@
-<div class="container">
-  <div class="main">
+<style>
+  .inferno-header {
+    display: none;
+  }
 
-PLACEHOLDER TEXT
-<div style="border:1px solid #999; margin: 10px; padding: 10px;">
-<p>
-  ONC Testing Edition:
-  <ul>
-    <li>USCDI</a></li>
-  </ul>
-  <a href="/inferno">START TESTING</a>
-</p>
+  .main {
+    padding: 10px;
+    margin: 0 0 40px 0;
+  }
+
+  .card-body {
+
+    font-size: 1.3rem;
+
+  }
+
+  .btn {
+    margin: 0 10px;
+    border-radius: 30px;
+    padding: 10px 30px;
+  }
+
+  .btn .oi {
+    margin-right: 5px;
+  }
+
+  .card-body h2 {
+
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+
+  }
+</style>
+
+<div class="banner" style="background-color:white">
+  <div class="container">
+    <div class="main" style="">
+      <img src="/images/inferno_logo.png" alt="Inferno Logo" style="width:50%">
+      <p class="headline">
+        Inferno is an open source FHIR&copy; testing tool that validates the correct behavior of FHIR servers.
+        It makes HTTP(S)
+        requests to test your server's conformance to authentication, authorization, and FHIR content standards and
+        reports the results back to you.
+      </p>
+
+    </div>
+  </div>
 </div>
-<div style="border:1px solid #999;  margin: 10px; padding: 10px;">
-<p>
-  Community Edition
-  <ul>
-    <li>SMART App Launch Guide</lI>
-    <li>Argonaut Data Query Implementation Guide (DSTU2)</li>
-    <li>Bulk Data Implementation Guide</li>
-    <li>Other IGs</li>
-  </ul>
-  <a href="/community">START TESTING</a>
-</p>
+<div class="container" style="padding:0;">
+  <div class="card-deck">
+    <div class="card">
+      <div class="card-body">
+        <h2>Community Edition</h2>
+        The Community Edition contains a community currated set of tests for select
+        FHIR implementation guides.  Develop tests to meet your own use cases and contribute them
+        to the community.
+
+        <div style="margin-top:20px;">
+          <a class="btn btn-secondary btn-lg" role="button" href='https://github.com/siteadmin/inferno#installation-and-deployment' style="margin: 0 10px; border-radius: 30px; padding: 10px 30px;"><span
+              class="oi oi-data-transfer-download"></span> Download</a>
+
+          <a class="btn btn-secondary btn-lg" role="button" href='/community' style="margin: 0 10px; border-radius: 30px; padding: 10px 30px;"><span
+              class="oi oi-cloud"></span> Try It Here</a>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h2>ONC Edition</h2>
+
+        The ONC Edition provides a set of tests for mature standards within
+        the US domain. This is primarily aligned with the Argonaut Data Query Implementation Guide.
+
+
+        <div style="margin-top:20px;">
+          <a class="btn btn-secondary btn-lg" role="button" href='https://github.com/siteadmin/inferno#installation-and-deployment' style="margin: 0 10px; border-radius: 30px; padding: 10px 30px;"><span
+              class="oi oi-data-transfer-download"></span> Download</a>
+
+          <a class="btn btn-secondary btn-lg" role="button" href='/inferno' style="margin: 0 10px; border-radius: 30px; padding: 10px 30px;"><span
+              class="oi oi-cloud"></span> Try It Here</a>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 </div>
+</div>
+</div>
+
 
 <!--
     <p>
@@ -40,5 +108,5 @@ PLACEHOLDER TEXT
       a production instance for these reasons.
     </p>
   -->
-  </div>
+</div>
 </div>
