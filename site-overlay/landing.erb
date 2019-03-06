@@ -14,6 +14,15 @@
 
   }
 
+  .card-description {
+    height: 120px;
+  }
+
+  p.headline {
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+
   .btn {
     margin: 0 10px;
     border-radius: 30px;
@@ -37,10 +46,14 @@
     <div class="main" style="">
       <img src="/images/inferno_logo.png" alt="Inferno Logo" style="width:50%">
       <p class="headline">
-        Inferno is an open source FHIR&copy; testing tool that validates the correct behavior of FHIR servers.
+        Open Source Health IT API testing for validating 
+        conformance to FHIR Implementation Guides.
+        
+        <!--
+        validates the correct behavior of FHIR servers.
         It makes HTTP(S)
         requests to test your server's conformance to authentication, authorization, and FHIR content standards and
-        reports the results back to you.
+        reports the results back to you. -->
       </p>
 
     </div>
@@ -50,36 +63,38 @@
   <div class="card-deck">
     <div class="card">
       <div class="card-body">
-        <h2>Community Edition</h2>
-        The Community Edition contains a community curated set of tests for select
-        FHIR implementation guides.  Develop tests to meet your own use cases and contribute them
-        to the community.
+        <h2>ONC Program Testing</h2>
 
+        <div class="card-description">
+          The Program Edition verifies that a provider supports the API requirements of the 
+          ONC 21<sup>st</sup> Century Cures NPRM.
+        </div>
         <div style="margin-top:20px;">
-          <a class="btn btn-secondary btn-lg" role="button" href='https://github.com/siteadmin/inferno#installation-and-deployment' style="margin: 0 10px; border-radius: 30px; padding: 10px 30px;"><span
-              class="oi oi-data-transfer-download"></span> Download</a>
-
-          <a class="btn btn-secondary btn-lg" role="button" href='/community' style="margin: 0 10px; border-radius: 30px; padding: 10px 30px;"><span
+          <a class="btn btn-secondary btn-lg" role="button" href='/inferno' style="margin: 0 10px; border-radius: 30px; padding: 10px 30px;"><span
               class="oi oi-cloud"></span> Try It Here</a>
 
+          <a class="btn btn-secondary btn-lg" role="button" href='https://github.com/siteadmin/inferno#installation-and-deployment' style="margin: 0 10px; border-radius: 30px; padding: 10px 30px;"><span
+              class="oi oi-data-transfer-download"></span> Download</a>
         </div>
 
       </div>
     </div>
     <div class="card">
       <div class="card-body">
-        <h2>ONC Edition</h2>
-
-        The ONC Edition provides a set of tests for mature standards within
-        the US domain. This is primarily aligned with the Argonaut Data Query Implementation Guide.
-
+        <h2>Community Testing</h2>
+        <div class="card-description">
+        The Community Edition contains a community curated set of tests for select
+        FHIR Implementation Guides.  Develop tests to meet your own use cases and contribute them
+        to the community.
+        </div>
 
         <div style="margin-top:20px;">
+
+          <a class="btn btn-secondary btn-lg" role="button" href='/community' style="margin: 0 10px; border-radius: 30px; padding: 10px 30px;"><span
+              class="oi oi-cloud"></span> Try It Here</a>
+
           <a class="btn btn-secondary btn-lg" role="button" href='https://github.com/siteadmin/inferno#installation-and-deployment' style="margin: 0 10px; border-radius: 30px; padding: 10px 30px;"><span
               class="oi oi-data-transfer-download"></span> Download</a>
-
-          <a class="btn btn-secondary btn-lg" role="button" href='/inferno' style="margin: 0 10px; border-radius: 30px; padding: 10px 30px;"><span
-              class="oi oi-cloud"></span> Try It Here</a>
 
         </div>
 
