@@ -2,3 +2,6 @@
 	path = inferno
 	url = https://github.com/siteadmin/inferno.git
 
+[submodule "inferno_community"]
+	path = inferno_community
+	url = https://github.com/siteadmin/inferno

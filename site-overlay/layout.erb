@@ -6,37 +6,42 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="/inferno/static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/inferno/static/open-iconic/css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="/inferno/static/css/styles.css?<%=version%>">
+    <link rel="stylesheet" href="<%=base_path%>/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<%=base_path%>/static/open-iconic/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="<%=base_path%>/static/css/styles.css?<%=version%>">
     <link rel="icon" href="<%=base_path%>/static/images/favicon.ico?<%=version%>" type="image/x-icon">
     <link rel="stylesheet" href="/site/site.css?<%=version%>">
-
   </head>
   <body>
-    <header>
-        <div class="site-header">
-            <div  class="container">
-                <a  class="site-logo" href="https://www.healthit.gov/" rel="external" title="HealthIT.gov">
-                    <img alt="HealthIT.gov" src="/site/healthit.gov.logo.png">
-                </a>
-            </div>
+
+  <header>
+    <div class="site-header">
+        <div  class="container">
+          <a  class="site-logo" href="https://www.healthit.gov/" rel="external" title="HealthIT.gov">
+            <img alt="HealthIT.gov" src="/site/healthit.gov.logo.png">
+          </a>
         </div>
-        <!--template bindings={}-->
+      </div>
+      <!--template bindings={}-->
     </header>
     <div class="warning-header container">
+        <!--<div style="font-size: 1.5rem;color:white;"> NOTE: This is a test instance with known bugs and gaps in functionality. </div>
+        <div>  </div>
+        -->
       <a href="https://github.com/siteadmin/inferno#installation-and-deployment">
         <div>This server is provided for demonstration purposes.</div>
         <div>Data is removed every Sunday at 12:01am ET.</div>
       </a>
     </div>
-    <nav class="navbar navbar-expand navbar-light inferno-header" role='banner'>
+    <nav class="navbar navbar-expand navbar-light inferno-header" role="banner">
       <div class="container">
         <div class='inferno-branding'>
           <a class="navbar-brand" href="<%=base_path%>/">
             <img src='/images/inferno_logo.png' alt='Inferno Logo'>
           </a>
-          <span class='badge badge-dark'>Developer Preview</span>
+          <% if badge_text.kind_of? String and !badge_text&.empty? %>
+            <span class='badge badge-dark'><%= badge_text %></span>
+          <%end %>
         </div>
         <!-- Navbar content -->
         <ul class="navbar-nav">
@@ -53,6 +58,7 @@
       if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
         alert('Inferno does not currently support Internet Explorer.  Please switch to another browser, such as Chrome, Firefox, Safari, or Edge.');
     </script>
+
     <%= yield %>
     <footer class="footer">
       <div class="container row">
@@ -69,16 +75,16 @@
     </footer>
 
     <script>
-      window.basePath = '/inferno';
+       window.basePath = '<%= base_path %>';
     </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Tether.js, then Popper.js, then Bootstrap JS -->
-    <script src="/inferno/static/js/jquery-3.2.1.min.js"></script>
-    <script src="/inferno/static/js/tether.min.js"></script>
-    <script src="/inferno/static/js/popper.min.js"></script>
-    <script src="/inferno/static/js/bootstrap.min.js"></script>
-    <script src="/inferno/static/js/app.js?<%=version%>"></script>
+    <script src="<%=base_path%>/static/js/jquery-3.2.1.min.js"></script>
+    <script src="<%=base_path%>/static/js/tether.min.js"></script>
+    <script src="<%=base_path%>/static/js/popper.min.js"></script>
+    <script src="<%=base_path%>/static/js/bootstrap.min.js"></script>
+    <script src="<%=base_path%>/static/js/app.js?<%=version%>"></script>
 
   </body>
 </html>

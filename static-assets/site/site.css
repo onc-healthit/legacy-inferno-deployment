@@ -13,3 +13,11 @@
 .warning-header a {
     color: white;
 }
+.guided .main {
+  margin-top: -122px;
+}
+
+.guided .group-nav {
+  padding: 138px 0 0;
+
+}
