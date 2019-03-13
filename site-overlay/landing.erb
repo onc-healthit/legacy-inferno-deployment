@@ -46,8 +46,8 @@
     <div class="main" style="">
       <img src="/images/inferno_logo.png" alt="Inferno Logo" style="width:50%">
       <p class="headline">
-        Open Source Health IT API testing for validating 
-        conformance to FHIR Implementation Guides.
+        Inferno is a rich and rigorous testing suite for HL7<sup>&reg;</sup> Fast Health Interoperability Resources (FHIR) to help developers implement the FHIR standard consistently.
+        We offer two modes for developers wanting to use Inferno – Inferno “Program” Mode and Inferno “Community” Mode.
         
         <!--
         validates the correct behavior of FHIR servers.
@@ -62,14 +62,17 @@
 <div class="container" style="padding:0;">
   <div class="card-deck">
     <div class="card">
-      <div class="card-body">
-        <h2>ONC Program Testing</h2>
+      <div class="card-body d-flex flex-column">
+        <h2 class="card-title">ONC "Program" Mode</h2>
 
-        <div class="card-description">
-          The Program Edition verifies that a provider supports the API requirements of the 
-          ONC 21<sup>st</sup> Century Cures NPRM.
+        <div class="card-text">
+
+          The “Program” mode is designed to verify that the developers’ FHIR server meet the standards requirements
+          currently proposed in the Application Programming Interface (API) Conditions of Certification in the
+          <a href="https://www.healthit.gov/sites/default/files/nprm/ONCCuresActNPRM.pdf">21<sup>st</sup>
+          Century Cures Act: Interoperability, Information Blocking, and the ONC Health IT Certification Program Proposed Rule</a>
         </div>
-        <div style="margin-top:20px;">
+        <div class = 'mt-auto' style="padding-top:20px;">
           <a class="btn btn-secondary btn-lg" role="button" href='/inferno' style="margin: 0 10px; border-radius: 30px; padding: 10px 30px;"><span
               class="oi oi-cloud"></span> Try It Here</a>
 
@@ -80,20 +83,20 @@
       </div>
     </div>
     <div class="card">
-      <div class="card-body">
-        <h2>Community Testing</h2>
-        <div class="card-description">
+      <div class="card-body d-flex flex-column">
+        <h2 class="card-title">Community Testing</h2>
+        <div class="card-text">
         The Community Edition contains a community curated set of tests for select
         FHIR Implementation Guides.  Develop tests to meet your own use cases and contribute them
         to the community.
         </div>
 
-        <div style="margin-top:20px;">
+        <div class = 'mt-auto' style="padding-top:20px;">
 
-          <a class="btn btn-secondary btn-lg" role="button" href='/community' style="margin: 0 10px; border-radius: 30px; padding: 10px 30px;"><span
+          <a class="btn btn-secondary btn-lg mt-auto" role="button" href='/community' style="margin: 0 10px; border-radius: 30px; padding: 10px 30px;"><span
               class="oi oi-cloud"></span> Try It Here</a>
 
-          <a class="btn btn-secondary btn-lg" role="button" href='https://github.com/siteadmin/inferno#installation-and-deployment' style="margin: 0 10px; border-radius: 30px; padding: 10px 30px;"><span
+          <a class="btn btn-secondary btn-lg mt-auto" role="button" href='https://github.com/siteadmin/inferno#installation-and-deployment' style="margin: 0 10px; border-radius: 30px; padding: 10px 30px;"><span
               class="oi oi-data-transfer-download"></span> Download</a>
 
         </div>
