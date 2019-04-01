@@ -38,7 +38,7 @@ autorun_capability: false
 # Include extra tests: true or false
 include_extras: true
 
-badge_text: ONC Program Tests
+badge_text: ONC Program Edition
 
 # module options: one or more must be set.  The first option in the list will be checked by default
 modules:
