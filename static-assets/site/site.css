@@ -12,6 +12,7 @@
 
 .warning-header a {
     color: white;
+    display:inline-block;
 }
 
 @media print{
