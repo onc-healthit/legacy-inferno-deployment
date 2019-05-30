@@ -44,3 +44,4 @@ badge_text: COMMUNITY EDITION
 modules:
   - smart
   - argonaut
+  - us_core_r4
