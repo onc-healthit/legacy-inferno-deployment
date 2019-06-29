@@ -78,7 +78,9 @@ Docker will cache the build of this image and make it available to docker-compos
 
 ## Set up SSL certificates
 
-The nginx server is set up to point to an inferno.crt and inferno.key file for its SSL certificate and key. Place these files into /etc/ssl/certs/inferno. You can also change the location of the certs directory in the docker-compose.yml file.
+The nginx server is set up to point to an inferno.crt and inferno.key file for its SSL certificate and key. Place these files into `/etc/ssl/certs/inferno`. You can also change the location of the certs directory in the `docker-compose.yml` file.
+
+For development setups, you will need to either create the `/etc/ssl/certs/inferno` directory and add self-signed certificates, or update the `docker-compose.yml` to `./nginx/development-certs`.  See [the readme in that directory](nginx/devlopment-certs) for more information.
 
 ## Start the Server
 
@@ -91,6 +93,8 @@ This starts the servers in the background (detatched).
 To stop the servers, run:
 
 `docker-compose down`
+
+If you receive an error regarding nginx being denied mounting to `/etc/ssl/certs/inferno`, then you haven't created the directory for the certificates.  If you are running this on a development machine, you may update the `docker-compose.yml` file to `./nginx/development-certs`.  See [the readme on certificates](nginx/development-certs) for more information.
 
 ## Updating the Server
 
