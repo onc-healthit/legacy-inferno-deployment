@@ -46,7 +46,7 @@ The code is available from git. Git needs to be installed on the Amazon image be
 
 ## Download the Overlay
 
-The overlay code is available from this git repository: https://github.com/siteadmin/inferno-site-overlay.git(https://github.com/siteadmin/inferno-site-overlay.git). 
+The overlay code is available from this git repository: https://github.com/siteadmin/inferno-site-overlay.git. 
 
 `git clone https://github.com/siteadmin/inferno-site-overlay.git`
 
@@ -80,7 +80,7 @@ Docker will cache the build of this image and make it available to docker-compos
 
 The nginx server is set up to point to an inferno.crt and inferno.key file for its SSL certificate and key. Place these files into `/etc/ssl/certs/inferno`. You can also change the location of the certs directory in the `docker-compose.yml` file.
 
-For development setups, you will need to either create the `/etc/ssl/certs/inferno` directory and add self-signed certificates, or update the `docker-compose.yml` to `./nginx/development-certs`.  See [the readme in that directory](nginx/devlopment-certs) for more information.
+For development setups, you will need to either create the `/etc/ssl/certs/inferno` directory and add self-signed certificates, or update the `docker-compose.yml` to `./nginx/development-certs`.  See [the readme in that directory](/siteadmin/inferno-site-overlay/nginx/devlopment-certs) for more information.
 
 ## Start the Server
 
