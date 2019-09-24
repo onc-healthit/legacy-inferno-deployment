@@ -2,11 +2,8 @@ version: '3'
 services:
   # the main ruby server
   ruby_server:
-    image: inferno
-    # map the project directory into the running container
+    image: onchealthit/inferno-program:latest
     volumes:
-      # base application
-      - ./inferno/:/var/www/inferno/
       # SITE-specific overlays
       - ./site-overlay/layout.erb:/var/www/inferno/lib/app/views/layout.erb
       - ./site-overlay/landing.erb:/var/www/inferno/lib/app/views/landing.erb
@@ -17,18 +14,15 @@ services:
     command: bundle exec rackup -o 0.0.0.0
     restart: unless-stopped
   ruby_server_community:
-    image: inferno_community
-    # map the project directory into the running container
+    image: onchealthit/inferno:latest
     volumes:
-      # base application
-      - ./inferno_community/:/var/www/inferno_community/
       # SITE-specific overlays
-      - ./site-overlay/layout.erb:/var/www/inferno_community/lib/app/views/layout.erb
-      - ./site-overlay/landing.erb:/var/www/inferno_community/lib/app/views/landing.erb
+      - ./site-overlay/layout.erb:/var/www/inferno/lib/app/views/layout.erb
+      - ./site-overlay/landing.erb:/var/www/inferno/lib/app/views/landing.erb
       # config file
-      - ./community-config.yml:/var/www/inferno_community/config.yml
+      - ./community-config.yml:/var/www/inferno/config.yml
     # run the application
-    working_dir: /var/www/inferno_community
+    working_dir: /var/www/inferno
     command: bundle exec rackup -o 0.0.0.0
     restart: unless-stopped
   nginx_server:
