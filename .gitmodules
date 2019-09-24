@@ -1,6 +1,0 @@
-[submodule "inferno_community"]
-	path = inferno_community
-	url = https://github.com/siteadmin/inferno
-[submodule "inferno"]
-	path = inferno
-	url = https://github.com/siteadmin/inferno-program
