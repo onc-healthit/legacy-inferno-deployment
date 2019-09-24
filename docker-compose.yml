@@ -1,7 +1,7 @@
 version: '3'
 services:
   # the main ruby server
-  ruby_server:
+  inferno_program:
     image: onchealthit/inferno-program:latest
     volumes:
       # SITE-specific overlays
@@ -13,7 +13,7 @@ services:
     working_dir: /var/www/inferno
     command: bundle exec rackup -o 0.0.0.0
     restart: unless-stopped
-  ruby_server_community:
+  inferno:
     image: onchealthit/inferno:latest
     volumes:
       # SITE-specific overlays
@@ -38,9 +38,9 @@ services:
       - "443:443"
     command: [nginx, '-g', 'daemon off;']
     links:
-      - ruby_server:ruby_server
-      - ruby_server_community:ruby_server_community
+      - inferno:inferno
+      - inferno_program:inferno_program
     restart: unless-stopped
     depends_on:
-      - ruby_server
-      - ruby_server_community
+      - inferno
+      - inferno_program
