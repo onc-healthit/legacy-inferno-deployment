@@ -9,6 +9,8 @@ services:
       - ./site-overlay/landing.erb:/var/www/inferno/lib/app/views/landing.erb
       # config file
       - ./inferno-config.yml:/var/www/inferno/config.yml
+      # terminology data
+      - ./bloom:/var/www/inferno/resources/terminology/validators/bloom
     # run the application
     working_dir: /var/www/inferno
     command: bundle exec rackup -o 0.0.0.0
@@ -21,6 +23,8 @@ services:
       - ./site-overlay/landing.erb:/var/www/inferno/lib/app/views/landing.erb
       # config file
       - ./community-config.yml:/var/www/inferno/config.yml
+      # terminology data
+      - ./bloom:/var/www/inferno/resources/terminology/validators/bloom
     # run the application
     working_dir: /var/www/inferno
     command: bundle exec rackup -o 0.0.0.0
