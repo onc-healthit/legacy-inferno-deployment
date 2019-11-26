@@ -16,7 +16,7 @@ services:
     command: bundle exec rackup -o 0.0.0.0
     restart: unless-stopped
   inferno:
-    image: onchealthit/inferno:latest
+    image: onchealthit/inferno-dev:latest
     volumes:
       # SITE-specific overlays
       - ./site-overlay/layout.erb:/var/www/inferno/lib/app/views/layout.erb
@@ -28,6 +28,8 @@ services:
     # run the application
     working_dir: /var/www/inferno
     command: bundle exec rackup -o 0.0.0.0
+    depends_on:
+      - bdt_service
     restart: unless-stopped
   nginx_server:
     image: nginx
@@ -48,3 +50,6 @@ services:
     depends_on:
       - inferno
       - inferno_program
+  bdt_service:
+    image: infernocommunity/inferno-bdt-service
+  
