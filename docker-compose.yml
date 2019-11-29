@@ -16,7 +16,7 @@ services:
     command: bundle exec rackup -o 0.0.0.0
     restart: unless-stopped
   inferno:
-    image: onchealthit/inferno-dev:latest
+    image: onchealthit/inferno:latest
     volumes:
       # SITE-specific overlays
       - ./site-overlay/layout.erb:/var/www/inferno/lib/app/views/layout.erb
