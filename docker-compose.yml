@@ -1,4 +1,4 @@
-version: '3'
+version: '2.4'
 services:
   # the main ruby server
   inferno_program:
@@ -15,6 +15,7 @@ services:
     working_dir: /var/www/inferno
     command: bundle exec rackup -o 0.0.0.0
     restart: unless-stopped
+    mem_limit: 2000m
   inferno:
     image: onchealthit/inferno:latest
     volumes:
@@ -31,6 +32,7 @@ services:
     depends_on:
       - bdt_service
     restart: unless-stopped
+    mem_limit: 2000m
   nginx_server:
     image: nginx
     volumes:
@@ -52,6 +54,8 @@ services:
       - inferno_program
   bdt_service:
     image: infernocommunity/inferno-bdt-service
+    mem_limit: 1000m
   validator_service:
     image: infernocommunity/fhir-validator-wrapper
+    mem_limit: 1500m
   
