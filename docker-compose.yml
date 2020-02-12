@@ -62,6 +62,6 @@ services:
   fhir_validator_app:
     image: infernocommunity/fhir-validator-app
     environment:
-      external_validator_url: http://fhir_validator_wrapper:4567
+      external_validator_url: http://validator_service:4567
       validator_base_path: validator
     mem_limit: 1000m
