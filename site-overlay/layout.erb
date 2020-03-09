@@ -24,7 +24,7 @@
     <link rel="icon" href="<%=base_path%>/static/images/favicon.ico?<%=version%>&" type="image/x-icon">
     <link rel="stylesheet" href="/site/site.css?<%=version%>&0">
   </head>
-  <body>
+  <body  <% if defined?(hide_header) %>style="background-color: #fff"<% end %>>
   <!-- Google Tag Manager (noscript) -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KC3FP96"
@@ -52,6 +52,7 @@
         <div>Data is removed every Sunday at 12:01am ET.</div>
       </a>
     </div>
+    <% unless defined?(hide_header) %>
     <nav class="navbar navbar-expand navbar-light inferno-header" role="banner">
       <div class="container">
         <div class='inferno-branding'>
@@ -73,6 +74,7 @@
         </ul> %>
       </div>
     </nav>
+    <% end %>
     <script type="text/javascript">
       if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
         alert('Inferno does not currently support Internet Explorer.  Please switch to another browser, such as Chrome, Firefox, Safari, or Edge.');
