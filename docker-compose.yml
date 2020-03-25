@@ -48,6 +48,7 @@ services:
     links:
       - inferno:inferno
       - inferno_program:inferno_program
+      - fhir_validator_app:fhir_validator_app
     restart: unless-stopped
     depends_on:
       - inferno
@@ -58,4 +59,9 @@ services:
   validator_service:
     image: infernocommunity/fhir-validator-wrapper
     mem_limit: 1500m
-  
+  fhir_validator_app:
+    image: infernocommunity/fhir-validator-app
+    environment:
+      external_validator_url: http://validator_service:4567
+      validator_base_path: validator
+    mem_limit: 1000m
