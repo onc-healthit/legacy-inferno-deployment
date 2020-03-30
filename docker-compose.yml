@@ -56,12 +56,15 @@ services:
   bdt_service:
     image: infernocommunity/inferno-bdt-service
     mem_limit: 1000m
+    restart: unless-stopped
   validator_service:
     image: infernocommunity/fhir-validator-wrapper
     mem_limit: 1500m
+    restart: unless-stopped
   fhir_validator_app:
     image: infernocommunity/fhir-validator-app
     environment:
       external_validator_url: http://validator_service:4567
       validator_base_path: validator
     mem_limit: 1000m
+    restart: unless-stopped
