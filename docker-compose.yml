@@ -68,3 +68,22 @@ services:
       validator_base_path: validator
     mem_limit: 1000m
     restart: unless-stopped
+  inferno_reference_server:
+    image: infernocommunity/inferno-reference-server
+    mem_limit: 1500m
+    restart: unless-stopped
+    environment:
+      - POSTGRES_HOST=db
+    depends_on:
+      - db
+  db:
+    image: postgres:9.6-alpine
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    volumes:
+      - fhir-pgdata:/var/lib/postgresql/data
+
+volumes:
+  fhir-pgdata:
