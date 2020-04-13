@@ -69,9 +69,7 @@ services:
     mem_limit: 1000m
     restart: unless-stopped
   inferno_reference_server:
-    # image: infernocommunity/inferno-reference-server
-    build:
-      context: ../inferno-reference-server
+    image: infernocommunity/inferno-reference-server
     mem_limit: 1500m
     restart: unless-stopped
     environment:
