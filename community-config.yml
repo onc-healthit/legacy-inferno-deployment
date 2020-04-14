@@ -99,4 +99,29 @@ presets:
     bulk_group_export_endpoint: /Group/5/$export
     # A UI for this launch configuration can be accessed at:
     # https://bulk-data.smarthealthit.org/?auth_type=jwks&jwks=eyJrZXlzIjpbeyJrdHkiOiJFQyIsImNydiI6IlAtMzg0IiwieCI6InRWekRXUTVxTTFla1JrTzlhY1YyT3JEV19KeWVTNmJhRHJYUHM5dlBPR094YTV6NTVDV3Rwd2dfQkR5T1l0OG4iLCJ5IjoiaHBYSUNaTU5lekQxb01OYWtPcWxHTmgzV1FnQ2RLZlFVcERObGh4X2RLUW8weW1NUGVYS3hpc01tVnFXT2stTCIsImtleV9vcHMiOlsidmVyaWZ5Il0sImV4dCI6dHJ1ZSwia2lkIjoiYzk1MjlhMGFhZWZhNWVhNjU5ZDY1YzQ5MzllY2E5NzYiLCJhbGciOiJFUzM4NCJ9LHsia3R5IjoiRUMiLCJjcnYiOiJQLTM4NCIsImQiOiJtOWdKcUdhaDhDOC12bW9zNS02YnA5MDJUUEZHSHZjdFVJekdkMjJMUHlFNm81RDJXRVUxbVdFbTc0bEVleWJQIiwieCI6InRWekRXUTVxTTFla1JrTzlhY1YyT3JEV19KeWVTNmJhRHJYUHM5dlBPR094YTV6NTVDV3Rwd2dfQkR5T1l0OG4iLCJ5IjoiaHBYSUNaTU5lekQxb01OYWtPcWxHTmgzV1FnQ2RLZlFVcERObGh4X2RLUW8weW1NUGVYS3hpc01tVnFXT2stTCIsImtleV9vcHMiOlsic2lnbiJdLCJleHQiOnRydWUsImtpZCI6ImM5NTI5YTBhYWVmYTVlYTY1OWQ2NWM0OTM5ZWNhOTc2IiwiYWxnIjoiRVMzODQifV19&page=1000&stu=4
+  infernotest_healthit_gov:
+    name: FHIR Reference Server
+    uri: https://infernotest.healthit.gov/r4
+    module: onc_program
+    inferno_uri: https://infernotest.healthit.gov/community
+    client_id: SAMPLE_CONFIDENTIAL_CLIENT_ID
+    confidential_client: true
+    client_secret: SAMPLE_CONFIDENTIAL_CLIENT_SECRET
+    onc_sl_url: https://infernotest.healthit.gov/r4
+    onc_sl_client_id: SAMPLE_CONFIDENTIAL_CLIENT_ID
+    onc_sl_confidential_client: true
+    onc_sl_client_secret: SAMPLE_CONFIDENTIAL_CLIENT_SECRET
+  inferno_healthit_gov:
+    name: FHIR Reference Server
+    uri: https://inferno.healthit.gov/r4
+    module: onc_program
+    inferno_uri: https://inferno.healthit.gov/community
+    client_id: SAMPLE_CONFIDENTIAL_CLIENT_ID
+    confidential_client: true
+    client_secret: SAMPLE_CONFIDENTIAL_CLIENT_SECRET
+    onc_sl_url: https://inferno.healthit.gov/r4
+    onc_sl_client_id: SAMPLE_CONFIDENTIAL_CLIENT_ID
+    onc_sl_confidential_client: true
+    onc_sl_client_secret: SAMPLE_CONFIDENTIAL_CLIENT_SECRET
+
 

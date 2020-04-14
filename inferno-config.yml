@@ -95,15 +95,27 @@ bulk_data_jwks:
     
 # preset fhir servers: optional. Minimally requires name, uri, module, optional inferno_uri, client_id, client_secret, scopes, instructions link
 presets:
-  reference_server:
+  infernotest_healthit_gov:
     name: FHIR Reference Server
-    uri: http://localhost:8080/r4
+    uri: https://infernotest.healthit.gov/r4
     module: onc_program
-    inferno_uri: http://localhost:4567
+    inferno_uri: https://infernotest.healthit.gov/inferno
     client_id: SAMPLE_CONFIDENTIAL_CLIENT_ID
     confidential_client: true
     client_secret: SAMPLE_CONFIDENTIAL_CLIENT_SECRET
-    onc_sl_url: http://localhost:8080/r4
+    onc_sl_url: https://infernotest.healthit.gov/r4
+    onc_sl_client_id: SAMPLE_CONFIDENTIAL_CLIENT_ID
+    onc_sl_confidential_client: true
+    onc_sl_client_secret: SAMPLE_CONFIDENTIAL_CLIENT_SECRET
+  inferno_healthit_gov:
+    name: FHIR Reference Server
+    uri: https://inferno.healthit.gov/r4
+    module: onc_program
+    inferno_uri: https://inferno.healthit.gov/inferno
+    client_id: SAMPLE_CONFIDENTIAL_CLIENT_ID
+    confidential_client: true
+    client_secret: SAMPLE_CONFIDENTIAL_CLIENT_SECRET
+    onc_sl_url: https://inferno.healthit.gov/r4
     onc_sl_client_id: SAMPLE_CONFIDENTIAL_CLIENT_ID
     onc_sl_confidential_client: true
     onc_sl_client_secret: SAMPLE_CONFIDENTIAL_CLIENT_SECRET
