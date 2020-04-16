@@ -115,3 +115,16 @@ make git_update
 make inferno_docker_rebuild
 docker-compose up -d
 ```
+
+## Testing locally
+
+In order to test locally the `nginx_server` configuration in `docker-compose.yml` must be modified.
+Specifically, in the volume mounting:
+
+`- /etc/ssl/certs/inferno:/etc/ssl/certs/inferno:ro` must be commented out
+
+and
+
+`- ./nginx/development-certs:/etc/ssl/certs/inferno:ro` should be uncommented.
+
+once that's done you can start it with `docker-compose up -d`.
