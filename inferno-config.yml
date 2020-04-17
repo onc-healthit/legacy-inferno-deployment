@@ -96,7 +96,7 @@ bulk_data_jwks:
 # preset fhir servers: optional. Minimally requires name, uri, module, optional inferno_uri, client_id, client_secret, scopes, instructions link
 presets:
   infernotest_healthit_gov:
-    name: FHIR Reference Server
+    name: Inferno Reference Server
     uri: https://infernotest.healthit.gov/r4
     module: onc_program
     inferno_uri: https://infernotest.healthit.gov/inferno
@@ -107,8 +107,9 @@ presets:
     onc_sl_client_id: SAMPLE_CONFIDENTIAL_CLIENT_ID
     onc_sl_confidential_client: true
     onc_sl_client_secret: SAMPLE_CONFIDENTIAL_CLIENT_SECRET
+    patient_ids: "76,184"
   inferno_healthit_gov:
-    name: FHIR Reference Server
+    name: Inferno Reference Server
     uri: https://inferno.healthit.gov/r4
     module: onc_program
     inferno_uri: https://inferno.healthit.gov/inferno
@@ -119,3 +120,4 @@ presets:
     onc_sl_client_id: SAMPLE_CONFIDENTIAL_CLIENT_ID
     onc_sl_confidential_client: true
     onc_sl_client_secret: SAMPLE_CONFIDENTIAL_CLIENT_SECRET
+    patient_ids: "76,184"
