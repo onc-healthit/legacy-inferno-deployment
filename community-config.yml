@@ -111,7 +111,6 @@ presets:
     onc_sl_client_id: SAMPLE_CONFIDENTIAL_CLIENT_ID
     onc_sl_confidential_client: true
     onc_sl_client_secret: SAMPLE_CONFIDENTIAL_CLIENT_SECRET
-    patient_ids: "76,184"
   inferno_healthit_gov:
     name: Inferno Reference Server
     uri: https://inferno.healthit.gov/r4
@@ -124,6 +123,5 @@ presets:
     onc_sl_client_id: SAMPLE_CONFIDENTIAL_CLIENT_ID
     onc_sl_confidential_client: true
     onc_sl_client_secret: SAMPLE_CONFIDENTIAL_CLIENT_SECRET
-    patient_ids: "76,184"
 
 
