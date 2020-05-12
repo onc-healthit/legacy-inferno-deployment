@@ -36,6 +36,8 @@ services:
     image: infernocommunity/fhir-validator-wrapper
     mem_limit: 1500m
     restart: unless-stopped
+    volumes:
+      - ./igs:/home/igs/package
   fhir_validator_app:
     image: infernocommunity/fhir-validator-app:latest
     environment:
