@@ -77,7 +77,9 @@ services:
     depends_on:
       - db
   db:
-    image: postgres:9.6-alpine
+    build:
+      context: .
+      dockerfile: Dockerfile.database
     environment:
       - POSTGRES_HOST_AUTH_METHOD=trust
     volumes:
