@@ -41,6 +41,7 @@ services:
       # to use tls on localhost for development, comment out above line and uncomment below
       # - ./nginx/development-certs:/etc/ssl/certs/inferno:ro
       - ./static-assets/:/var/www/inferno/public/
+      - ./terminology/:/var/www/terminology/
     ports:
       - "80:80"
       - "443:443"
@@ -83,6 +84,9 @@ services:
     volumes:
       - fhir-pgdata:/var/lib/postgresql/data
     restart: unless-stopped
-
+  vsac_auth:
+    image: infernocommunity/vsac_auth:latest
+    ports:
+      - "4567:4567"
 volumes:
   fhir-pgdata:
