@@ -37,9 +37,9 @@ services:
     image: nginx
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - /etc/ssl/certs/inferno:/etc/ssl/certs/inferno:ro
+      #  - /etc/ssl/certs/inferno:/etc/ssl/certs/inferno:ro
       # to use tls on localhost for development, comment out above line and uncomment below
-      # - ./nginx/development-certs:/etc/ssl/certs/inferno:ro
+      - ./nginx/development-certs:/etc/ssl/certs/inferno:ro
       - ./static-assets/:/var/www/inferno/public/
     ports:
       - "80:80"
@@ -61,13 +61,21 @@ services:
     image: infernocommunity/fhir-validator-wrapper
     mem_limit: 1500m
     restart: unless-stopped
+  community_validator_service:
+    image: infernocommunity/fhir-validator-service:latest
+    mem_limit: 1500m
+    restart: unless-stopped
   fhir_validator_app:
     image: infernocommunity/fhir-validator-app
     environment:
-      external_validator_url: http://validator_service:4567
-      validator_base_path: validator
+      EXTERNAL_VALIDATOR_URL: http://community_validator_service:4567
+      VALIDATOR_BASE_PATH: /validator
     mem_limit: 1000m
     restart: unless-stopped
+    volumes:
+      #  - /etc/ssl/certs/inferno:/etc/ssl/certs/inferno:ro
+      # to use tls on localhost for development, comment out above line and uncomment below
+      - ./nginx/development-certs:/etc/ssl/certs/inferno:ro
   inferno_reference_server:
     image: infernocommunity/inferno-reference-server
     mem_limit: 1500m
