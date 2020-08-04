@@ -37,9 +37,9 @@ services:
     image: nginx
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - /etc/ssl/certs/inferno:/etc/ssl/certs/inferno:ro
+      #- /etc/ssl/certs/inferno:/etc/ssl/certs/inferno:ro
       # to use tls on localhost for development, comment out above line and uncomment below
-      # - ./nginx/development-certs:/etc/ssl/certs/inferno:ro
+      - ./nginx/development-certs:/etc/ssl/certs/inferno:ro #TODO, comment this out!
       - ./static-assets/:/var/www/inferno/public/
     ports:
       - "80:80"
@@ -68,6 +68,12 @@ services:
       validator_base_path: validator
     mem_limit: 1000m
     restart: unless-stopped
+  inferno_bulk_data_server:
+    image: infernocommunity/bulk-data-server
+    mem_limit: 1500m
+    restart: unless-stopped
+    environment:
+      - SERVER_BASE_URL=http://10.14.196.25
   inferno_reference_server:
     image: infernocommunity/inferno-reference-server
     mem_limit: 1500m
