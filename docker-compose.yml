@@ -53,6 +53,8 @@ services:
     depends_on:
       - inferno
       - inferno_program
+      - fhir_validator_app
+      - community_validator_service
   bdt_service:
     image: infernocommunity/inferno-bdt-service
     mem_limit: 1000m
