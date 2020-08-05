@@ -3,23 +3,6 @@
     display: none;
   }
 
-  .card-deck {
-      padding: 15px;
-  }
-
-  .card {
-      max-width: 420px;
-  }
-
-  .card-title {
-      height: 10%;
-      margin-bottom: 1em;
-  }
-
-  .card-text {
-      height: 80%;
-  }
-
   .main {
     padding: 10px;
     margin: 0 0 40px 0;
@@ -51,7 +34,6 @@
   }
 
   .btn {
-    width: 100%;
     margin: 0 10px;
     border-radius: 30px;
     padding: 10px 30px;
@@ -64,7 +46,7 @@
   .card-body h2 {
 
     text-transform: uppercase;
-    margin-bottom: 1.5em;
+    margin-bottom: 1.2rem;
 
   }
 
@@ -91,7 +73,7 @@
     </div>
   </div>
 </div>
-<div class="d-flex justify-content-center flex-wrap" style="padding:0;">
+<div class="container" style="padding:0;">
   <div class="card-deck">
     <div class="card">
       <div class="card-body d-flex flex-column">
@@ -101,8 +83,8 @@
         Inferno Program Edition is a streamlined testing tool for services seeking to meet
         the requirements of the Standardized API for Patient and Population Services criterion § 170.315(g)(10) in the 2015 Edition Cures Update.
         </div>
-        <div class="d-flex justify-content-center flex-wrap" style="padding-top:20px;">
-          <a class="btn btn-secondary btn-lg" role="button" href="/inferno" style="width: 100%;margin: 10px 10px 10px;border-radius: 10px; padding: 10px 30px;"><span class="oi oi-cloud"></span> Try It Here</a>
+        <div class="mt-auto" style="padding-top:20px;">
+          <a class="btn btn-secondary btn-lg" role="button" href="/inferno" style="width: 400px;margin: 10px 10px 10px;border-radius: 10px; padding: 10px 30px;"><span class="oi oi-cloud"></span> Try It Here</a>
 
           <a class="" role="button" href="https://github.com/onc-healthit/inferno-program#installation-and-deployment" style="width: 400px;margin: 0 10px;border-radius: 30px;padding: 10px 30px;display: inline-block;text-align: center;" target="_blank"><span class="oi oi-data-transfer-download"></span> Download</a>
         </div>
@@ -113,33 +95,17 @@
       <div class="card-body d-flex flex-column">
         <h2 class="card-title">Community Edition</h2>
         <div class="card-text">
-        The Community Edition contains a community curated set of tests for select
+        The Community Edition contains a community curated set of tests and tools for select
         FHIR Implementation Guides.  Develop tests to meet your own use cases and contribute them
         to the community.
         </div>
 
-          <div class="d-flex justify-content-center flex-wrap" style="padding-top:20px;">
-          <a class="btn btn-secondary btn-lg" role="button" href="/community" style="border-radius: 10px; width: 100%;margin: 10px 10px 10px;border-radius: 10px;padding: 10px 30px;"><span class="oi oi-cloud"></span> Try It Here</a>
-
+          <div class="mt-auto" style="padding-top:20px;">
+          <a class="btn btn-secondary btn-lg" role="button" href="/community" style="border-radius: 10px; width: 400px;margin: 10px 10px 10px;border-radius: 10px;padding: 10px 30px;"><span class="oi oi-beaker"></span> Community Tests</a>
+          <a class="btn btn-secondary btn-lg" role="button" href="/validator" style="border-radius: 10px; width: 400px;margin: 10px 10px 10px;border-radius: 10px;padding: 10px 30px;"><span class="oi oi-check"></span> FHIR Resource Validator</a>
           <a class="" role="button" href="https://github.com/onc-healthit/inferno#installation-and-deployment" style="width: 400px;margin: 0 10px;border-radius: 30px;padding: 10px 30px;display: inline-block;text-align: center;" target="_blank"><span class="oi oi-data-transfer-download"></span> Download</a>
         </div>
 
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-body d-flex flex-column">
-        <h2 class="card-title">FHIR Resource Validator</h2>
-        <div class="card-text">
-          The FHIR Resource Validator validates FHIR Resources against profiles.
-          Quickly validate resources against a standard set of profiles from a variety of Implementation Guides or
-          upload your own.
-        </div>
-
-        <div class="d-flex justify-content-center flex-wrap" style="padding-top:20px;">
-          <a class="btn btn-secondary btn-lg" role="button" href="/validator" style="border-radius: 10px; width: 100%;margin: 10px 10px 10px;border-radius: 10px;padding: 10px 30px;"><span class="oi oi-cloud"></span> Try It Here</a>
-
-          <a class="" role="button" href="https://github.com/inferno-community/fhir-validator-app#running-the-fhir-validator-app-using-docker-compose" style="width: 400px;margin: 0 10px;border-radius: 30px;padding: 10px 30px;display: inline-block;text-align: center;" target="_blank"><span class="oi oi-data-transfer-download"></span> Download</a>
-        </div>
       </div>
     </div>
   </div>
