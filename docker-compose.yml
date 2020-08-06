@@ -53,6 +53,8 @@ services:
     depends_on:
       - inferno
       - inferno_program
+      - fhir_validator_app
+      - community_validator_service
   bdt_service:
     image: infernocommunity/inferno-bdt-service
     mem_limit: 1000m
@@ -61,13 +63,21 @@ services:
     image: infernocommunity/fhir-validator-wrapper
     mem_limit: 1500m
     restart: unless-stopped
+  community_validator_service:
+    image: infernocommunity/fhir-validator-service:latest
+    mem_limit: 1500m
+    restart: unless-stopped
   fhir_validator_app:
     image: infernocommunity/fhir-validator-app
     environment:
-      external_validator_url: http://validator_service:4567
-      validator_base_path: validator
+      EXTERNAL_VALIDATOR_URL: /validatorapi
+      VALIDATOR_BASE_PATH: /validator
     mem_limit: 1000m
     restart: unless-stopped
+    volumes:
+      - /etc/ssl/certs/inferno:/etc/ssl/certs/inferno:ro
+      # to use tls on localhost for development, comment out above line and uncomment below
+      # - ./nginx/development-certs:/etc/ssl/certs/inferno:ro
   inferno_reference_server:
     image: infernocommunity/inferno-reference-server
     mem_limit: 1500m
