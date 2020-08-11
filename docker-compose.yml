@@ -31,6 +31,7 @@ services:
     command: bundle exec rackup -o 0.0.0.0
     depends_on:
       - bdt_service
+      - community_validator_service
     restart: unless-stopped
     mem_limit: 2000m
   nginx_server:
