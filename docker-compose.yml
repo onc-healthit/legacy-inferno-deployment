@@ -96,6 +96,10 @@ services:
     volumes:
       - fhir-pgdata:/var/lib/postgresql/data
     restart: unless-stopped
+  inferno_bulk_data_server:
+    image: infernocommunity/bulk-data-server
+    mem_limit: 1500m
+    restart: unless-stopped
 
 volumes:
   fhir-pgdata:
