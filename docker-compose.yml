@@ -61,7 +61,7 @@ services:
     mem_limit: 1000m
     restart: unless-stopped
   validator_service:
-    image: infernocommunity/fhir-validator-wrapper
+    image: infernocommunity/fhir-validator-service:v0.1.0
     mem_limit: 1500m
     restart: unless-stopped
   community_validator_service:
