@@ -85,6 +85,7 @@ services:
     restart: unless-stopped
     environment:
       - POSTGRES_HOST=db
+      - CUSTOM_DEPLOYMENT_PORT=8443
     depends_on:
       - db
   db:
