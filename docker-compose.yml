@@ -38,9 +38,9 @@ services:
     image: nginx
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      # - /etc/ssl/certs/inferno:/etc/ssl/certs/inferno:ro
+      - /etc/ssl/certs/inferno:/etc/ssl/certs/inferno:ro
       # to use tls on localhost for development, comment out above line and uncomment below
-      - ./nginx/development-certs:/etc/ssl/certs/inferno:ro
+      # - ./nginx/development-certs:/etc/ssl/certs/inferno:ro
       - ./static-assets/:/var/www/inferno/public/
     ports:
       - "80:80"
