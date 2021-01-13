@@ -40,7 +40,6 @@ modules:
   - smart
   - bdt
   - argonaut
-  - uscore_v3.1.0
   - uscore_v3.1.1
 
 presets:
