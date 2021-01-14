@@ -120,29 +120,3 @@ presets:
     onc_sl_client_id: SAMPLE_CONFIDENTIAL_CLIENT_ID
     onc_sl_confidential_client: true
     onc_sl_client_secret: SAMPLE_CONFIDENTIAL_CLIENT_SECRET
-  infernotest_healthit_gov_311:
-    name: Inferno Reference Server (US Core v3.1.1)
-    uri: https://infernotest.healthit.gov/reference-server/r4
-    module: uscore_v3.1.1
-    inferno_uri: https://infernotest.healthit.gov/community
-    client_id: SAMPLE_CONFIDENTIAL_CLIENT_ID
-    confidential_client: true
-    client_secret: SAMPLE_CONFIDENTIAL_CLIENT_SECRET
-    onc_sl_url: https://infernotest.healthit.gov/reference-server/r4
-    onc_sl_client_id: SAMPLE_CONFIDENTIAL_CLIENT_ID
-    onc_sl_confidential_client: true
-    onc_sl_client_secret: SAMPLE_CONFIDENTIAL_CLIENT_SECRET
-  inferno_healthit_gov_311:
-    name: Inferno Reference Server (US Core v3.1.1)
-    uri: https://inferno.healthit.gov/reference-server/r4
-    module: uscore_v3.1.1
-    inferno_uri: https://inferno.healthit.gov/community
-    client_id: SAMPLE_CONFIDENTIAL_CLIENT_ID
-    confidential_client: true
-    client_secret: SAMPLE_CONFIDENTIAL_CLIENT_SECRET
-    onc_sl_url: https://inferno.healthit.gov/reference-server/r4
-    onc_sl_client_id: SAMPLE_CONFIDENTIAL_CLIENT_ID
-    onc_sl_confidential_client: true
-    onc_sl_client_secret: SAMPLE_CONFIDENTIAL_CLIENT_SECRET
-
-
