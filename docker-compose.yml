@@ -28,7 +28,7 @@ services:
       - ./bloom:/var/www/inferno/resources/terminology/validators/bloom
     # run the application
     working_dir: /var/www/inferno
-    command: bundle exec rackup -o 0.0.0.0
+    command: bin/run.sh
     depends_on:
       - bdt_service
       - community_validator_service
