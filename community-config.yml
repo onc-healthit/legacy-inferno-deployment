@@ -45,7 +45,7 @@ external_fhirpath_evaluator_url: http://community_validator_service:4567
 modules:
   - smart
   - bdt
-  - argonaut
+  - ips
   - uscore_v3.1.1
 
 presets:
