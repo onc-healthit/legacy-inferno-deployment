@@ -2,7 +2,7 @@ version: '2.2'
 services:
   # the main ruby server
   inferno_program:
-    image: onchealthit/inferno-program:latest
+    image: onchealthit/inferno-program:release-latest
     volumes:
       # SITE-specific overlays
       - ./site-overlay/layout.erb:/var/www/inferno/lib/app/views/layout.erb
@@ -17,7 +17,7 @@ services:
     restart: unless-stopped
     mem_limit: 2000m
   inferno:
-    image: onchealthit/inferno:latest
+    image: onchealthit/inferno:release-latest
     volumes:
       # SITE-specific overlays
       - ./site-overlay/layout.erb:/var/www/inferno/lib/app/views/layout.erb
