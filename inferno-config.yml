@@ -109,6 +109,7 @@ presets:
     onc_sl_client_secret: SAMPLE_CONFIDENTIAL_CLIENT_SECRET
     onc_public_client_id: SAMPLE_PUBLIC_CLIENT_ID
     patient_ids: "85,355"
+    token: SAMPLE_TOKEN
     bulk_url:  https://infernotest.healthit.gov/bulk-data-server/eyJlcnIiOiIiLCJwYWdlIjoxMDAwMCwiZHVyIjoxMCwidGx0IjoxNSwibSI6MSwic3R1Ijo0fQ/fhir
     bulk_token_endpoint: https://infernotest.healthit.gov/bulk-data-server/auth/token
     bulk_client_id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJlZ2lzdHJhdGlvbi10b2tlbiJ9.eyJqd2tzX3VybCI6Imh0dHBzOi8vaW5mZXJub3Rlc3QuaGVhbHRoaXQuZ292L2luZmVybm8vLndlbGwta25vd24vandrcy5qc29uIiwiYWNjZXNzVG9rZW5zRXhwaXJlSW4iOjE1LCJpYXQiOjE2MDMxMTQxMzB9.giM_eScI6SaNUOnmbE0W9dPuwl1xEPLN4thXBUDcSLc
@@ -130,6 +131,7 @@ presets:
     onc_sl_client_secret: SAMPLE_CONFIDENTIAL_CLIENT_SECRET
     onc_public_client_id: SAMPLE_PUBLIC_CLIENT_ID
     patient_ids: "85,355"
+    token: SAMPLE_TOKEN
     scopes: 'launch openid fhirUser offline_access user/Medication.read user/AllergyIntolerance.read user/CarePlan.read user/CareTeam.read user/Condition.read user/Device.read user/DiagnosticReport.read user/DocumentReference.read user/Encounter.read user/Goal.read user/Immunization.read user/Location.read user/MedicationRequest.read user/Observation.read user/Organization.read user/Patient.read user/Practitioner.read user/Procedure.read user/Provenance.read user/PractitionerRole.read'
     onc_sl_scopes: 'launch/patient openid fhirUser offline_access patient/Medication.read patient/AllergyIntolerance.read patient/CarePlan.read patient/CareTeam.read patient/Condition.read patient/Device.read patient/DiagnosticReport.read patient/DocumentReference.read patient/Encounter.read patient/Goal.read patient/Immunization.read patient/Location.read patient/MedicationRequest.read patient/Observation.read patient/Organization.read patient/Patient.read patient/Practitioner.read patient/Procedure.read patient/Provenance.read patient/PractitionerRole.read'
     bulk_url:  https://inferno.healthit.gov/bulk-data-server/eyJlcnIiOiIiLCJwYWdlIjoxMDAwMCwiZHVyIjoxMCwidGx0IjoxNSwibSI6MSwic3R1Ijo0fQ/fhir
