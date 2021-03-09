@@ -101,6 +101,8 @@ services:
     image: infernocommunity/bulk-data-server
     mem_limit: 1500m
     restart: unless-stopped
+    environment:
+      - SERVER_BASE_URL=https://inferno.healthit.gov
 
 volumes:
   fhir-pgdata:
