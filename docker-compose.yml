@@ -15,7 +15,8 @@ services:
     working_dir: /var/www/inferno
     command: bundle exec rackup -o 0.0.0.0
     restart: unless-stopped
-    mem_limit: 2000m
+    mem_limit: 6000m
+    cpuset: '0'
   inferno:
     image: onchealthit/inferno:release-latest
     volumes:
@@ -33,7 +34,8 @@ services:
       - bdt_service
       - community_validator_service
     restart: unless-stopped
-    mem_limit: 2000m
+    mem_limit: 3000m
+    cpuset: '1'
   nginx_server:
     image: nginx
     volumes:
@@ -56,24 +58,30 @@ services:
       - inferno_program
       - fhir_validator_app
       - community_validator_service
+    mem_limit: 100m
+    cpuset: '3,4'
   bdt_service:
     image: infernocommunity/inferno-bdt-service
-    mem_limit: 1000m
+    mem_limit: 600m
     restart: unless-stopped
+    cpuset: '3,4'
   validator_service:
     image: infernocommunity/fhir-validator-service:v1.2.0
     mem_limit: 1500m
     restart: unless-stopped
+    cpuset: '3,4'
   community_validator_service:
     image: infernocommunity/fhir-validator-service:latest
     mem_limit: 1500m
     restart: unless-stopped
+    cpuset: '3,4'
   fhir_validator_app:
     image: infernocommunity/fhir-validator-app
     environment:
       EXTERNAL_VALIDATOR_URL: /validatorapi
       VALIDATOR_BASE_PATH: /validator
-    mem_limit: 1000m
+    mem_limit: 100m
+    cpuset: '3,4'
     restart: unless-stopped
     volumes:
       - /etc/ssl/certs/inferno:/etc/ssl/certs/inferno:ro
@@ -81,7 +89,8 @@ services:
       # - ./nginx/development-certs:/etc/ssl/certs/inferno:ro
   inferno_reference_server:
     image: infernocommunity/inferno-reference-server
-    mem_limit: 1500m
+    mem_limit: 2000m
+    cpuset: '3,4'
     restart: unless-stopped
     environment:
       - POSTGRES_HOST=db
@@ -97,9 +106,12 @@ services:
     volumes:
       - fhir-pgdata:/var/lib/postgresql/data
     restart: unless-stopped
+    mem_limit: 600m
+    cpuset: '3,4'
   inferno_bulk_data_server:
     image: infernocommunity/bulk-data-server
-    mem_limit: 1500m
+    mem_limit: 600m
+    cpuset: '3,4'
     restart: unless-stopped
     environment:
       - SERVER_BASE_URL=https://inferno.healthit.gov
