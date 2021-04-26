@@ -13,7 +13,7 @@ services:
       - ./bloom:/var/www/inferno/resources/terminology/validators/bloom
     # run the application
     working_dir: /var/www/inferno
-    command: bundle exec rackup -o 0.0.0.0
+    command: bin/run.sh
     restart: unless-stopped
     mem_limit: 6000m
     cpuset: '0'
