@@ -7,13 +7,14 @@ services:
       # SITE-specific overlays
       - ./site-overlay/layout.erb:/var/www/inferno/lib/app/views/layout.erb
       - ./site-overlay/landing.erb:/var/www/inferno/lib/app/views/landing.erb
-      # config file
+      # config files
       - ./inferno-config.yml:/var/www/inferno/config.yml
+      - ./db.config.yml:/var/www/inferno/db/config.yml
       # terminology data
       - ./bloom:/var/www/inferno/resources/terminology/validators/bloom
     # run the application
     working_dir: /var/www/inferno
-    command: bundle exec rackup -o 0.0.0.0
+    command: bin/run.sh
     restart: unless-stopped
     mem_limit: 6000m
     cpuset: '0'
