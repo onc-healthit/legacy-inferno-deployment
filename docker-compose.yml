@@ -1,42 +1,46 @@
 version: '2.2'
 services:
   # the main ruby server
-  inferno_program:
-    image: onchealthit/inferno-program:release-latest
-    volumes:
-      # SITE-specific overlays
-      - ./site-overlay/layout.erb:/var/www/inferno/lib/app/views/layout.erb
-      - ./site-overlay/landing.erb:/var/www/inferno/lib/app/views/landing.erb
-      # config files
-      - ./inferno-config.yml:/var/www/inferno/config.yml
-      - ./db.config.yml:/var/www/inferno/db/config.yml
-      # terminology data
-      - ./bloom:/var/www/inferno/resources/terminology/validators/bloom
-    # run the application
-    working_dir: /var/www/inferno
-    command: bin/run.sh
-    restart: unless-stopped
-    mem_limit: 6000m
-    cpuset: '0'
-  inferno:
-    image: onchealthit/inferno:release-latest
-    volumes:
-      # SITE-specific overlays
-      - ./site-overlay/layout.erb:/var/www/inferno/lib/app/views/layout.erb
-      - ./site-overlay/landing.erb:/var/www/inferno/lib/app/views/landing.erb
-      # config file
-      - ./community-config.yml:/var/www/inferno/config.yml
-      # terminology data
-      - ./bloom:/var/www/inferno/resources/terminology/validators/bloom
-    # run the application
-    working_dir: /var/www/inferno
-    command: bin/run.sh
-    depends_on:
-      - bdt_service
-      - community_validator_service
-    restart: unless-stopped
-    mem_limit: 3000m
-    cpuset: '1'
+  # inferno_program:
+  #   image: onchealthit/inferno-program:release-latest
+  #   volumes:
+  #     # SITE-specific overlays
+  #     - ./site-overlay/layout.erb:/var/www/inferno/lib/app/views/layout.erb
+  #     - ./site-overlay/landing.erb:/var/www/inferno/lib/app/views/landing.erb
+  #     # config files
+  #     - ./inferno-config.yml:/var/www/inferno/config.yml
+  #     - ./db.config.yml:/var/www/inferno/db/config.yml
+  #     # terminology data
+  #     - ./bloom:/var/www/inferno/resources/terminology/validators/bloom
+  #   # run the application
+  #   working_dir: /var/www/inferno
+  #   command: bin/run.sh
+  #   restart: unless-stopped
+  #   mem_limit: 6000m
+  #   cpuset: '0'
+  # inferno:
+  #   image: onchealthit/inferno:release-latest
+  #   volumes:
+  #     # SITE-specific overlays
+  #     - ./site-overlay/layout.erb:/var/www/inferno/lib/app/views/layout.erb
+  #     - ./site-overlay/landing.erb:/var/www/inferno/lib/app/views/landing.erb
+  #     # config file
+  #     - ./community-config.yml:/var/www/inferno/config.yml
+  #     # terminology data
+  #     - ./bloom:/var/www/inferno/resources/terminology/validators/bloom
+  #   # run the application
+  #   working_dir: /var/www/inferno
+  #   command: bin/run.sh
+  #   depends_on:
+  #     - bdt_service
+  #     - community_validator_service
+  #   restart: unless-stopped
+  #   mem_limit: 3000m
+  #   cpuset: '1'
+  inferno_core:
+    image: infernocommunity/inferno-core:latest
+    environment:
+      - VALIDATOR_URL=https://inferno-dev.healthit.gov/validatorapi
   nginx_server:
     image: nginx
     volumes:
@@ -44,78 +48,73 @@ services:
       - /etc/ssl/certs/inferno:/etc/ssl/certs/inferno:ro
       # to use tls on localhost for development, comment out above line and uncomment below
       # - ./nginx/development-certs:/etc/ssl/certs/inferno:ro
-      - ./static-assets/:/var/www/inferno/public/
+      # - ./static-assets/:/var/www/inferno/public/
     ports:
       - "80:80"
       - "443:443"
     command: [nginx, '-g', 'daemon off;']
     links:
-      - inferno:inferno
-      - inferno_program:inferno_program
+      - inferno_core:inferno_core
       - fhir_validator_app:fhir_validator_app
     restart: unless-stopped
     depends_on:
-      - inferno
-      - inferno_program
+      - inferno_core
       - fhir_validator_app
       - community_validator_service
     mem_limit: 100m
-    cpuset: '2,3'
-  bdt_service:
-    image: infernocommunity/inferno-bdt-service
-    mem_limit: 600m
-    restart: unless-stopped
-    cpuset: '2,3'
-  validator_service:
-    image: infernocommunity/fhir-validator-service:v1.2.0
-    mem_limit: 1500m
-    restart: unless-stopped
-    cpuset: '2,3'
+  # bdt_service:
+  #   image: infernocommunity/inferno-bdt-service
+  #   mem_limit: 600m
+  #   restart: unless-stopped
+  #   cpuset: '2,3'
+  # validator_service:
+  #   image: infernocommunity/fhir-validator-service:v1.2.0
+  #   mem_limit: 1500m
+  #   restart: unless-stopped
+  #   cpuset: '2,3'
   community_validator_service:
     image: infernocommunity/fhir-validator-service:latest
     mem_limit: 1500m
     restart: unless-stopped
-    cpuset: '2,3'
   fhir_validator_app:
     image: infernocommunity/fhir-validator-app
     environment:
       EXTERNAL_VALIDATOR_URL: /validatorapi
       VALIDATOR_BASE_PATH: /validator
     mem_limit: 100m
-    cpuset: '2,3'
     restart: unless-stopped
     volumes:
       - /etc/ssl/certs/inferno:/etc/ssl/certs/inferno:ro
       # to use tls on localhost for development, comment out above line and uncomment below
       # - ./nginx/development-certs:/etc/ssl/certs/inferno:ro
-  inferno_reference_server:
-    image: infernocommunity/inferno-reference-server
-    mem_limit: 2000m
-    cpuset: '2,3'
-    restart: unless-stopped
-    environment:
-      - POSTGRES_HOST=db
-      - CUSTOM_BEARER_TOKEN=SAMPLE_TOKEN
-    depends_on:
-      - db
-  db:
-    build:
-      context: .
-      dockerfile: Dockerfile.database
-    environment:
-      - POSTGRES_HOST_AUTH_METHOD=trust
-    volumes:
-      - fhir-pgdata:/var/lib/postgresql/data
-    restart: unless-stopped
-    mem_limit: 600m
-    cpuset: '2,3'
-  inferno_bulk_data_server:
-    image: infernocommunity/bulk-data-server
-    mem_limit: 600m
-    cpuset: '2,3'
-    restart: unless-stopped
-    environment:
-      - SERVER_BASE_URL=https://inferno.healthit.gov
+  # inferno_reference_server:
+  #   image: infernocommunity/inferno-reference-server
+  #   mem_limit: 2000m
+  #   cpuset: '2,3'
+  #   restart: unless-stopped
+  #   environment:
+  #     - POSTGRES_HOST=db
+  #     - CUSTOM_BEARER_TOKEN=SAMPLE_TOKEN
+  #   depends_on:
+  #     - db
+  # db:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.database
+  #   environment:
+  #     - POSTGRES_HOST_AUTH_METHOD=trust
+  #   volumes:
+  #     - fhir-pgdata:/var/lib/postgresql/data
+  #   restart: unless-stopped
+  #   mem_limit: 600m
+  #   cpuset: '2,3'
+  # inferno_bulk_data_server:
+  #   image: infernocommunity/bulk-data-server
+  #   mem_limit: 600m
+  #   cpuset: '2,3'
+  #   restart: unless-stopped
+  #   environment:
+  #     - SERVER_BASE_URL=https://inferno.healthit.gov
 
 volumes:
   fhir-pgdata:
