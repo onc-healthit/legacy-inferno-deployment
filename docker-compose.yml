@@ -39,6 +39,7 @@ services:
   #   cpuset: '1'
   inferno_core:
     image: infernocommunity/inferno-core:latest
+  #   restart: unless-stopped
     environment:
       - VALIDATOR_URL=https://inferno-dev.healthit.gov/validatorapi
   nginx_server:
