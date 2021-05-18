@@ -75,7 +75,7 @@ services:
   #   cpuset: '2,3'
   community_validator_service:
     image: infernocommunity/fhir-validator-service:latest
-    mem_limit: 1500m
+    mem_limit: 6000m
     restart: unless-stopped
   fhir_validator_app:
     image: infernocommunity/fhir-validator-app
