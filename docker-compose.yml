@@ -42,6 +42,8 @@ services:
   #   restart: unless-stopped
     environment:
       - VALIDATOR_URL=https://inferno-dev.healthit.gov/validatorapi
+    volumes:
+      - ./inferno_production.db:/opt/inferno/db/inferno_production.db
   nginx_server:
     image: nginx
     volumes:
