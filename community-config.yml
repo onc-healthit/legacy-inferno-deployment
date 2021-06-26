@@ -47,6 +47,7 @@ modules:
   - bdt
   - ips
   - uscore_v3.1.1
+  - smart_scheduling_links
 
 presets:
   standalone_bulk_server_healthit:

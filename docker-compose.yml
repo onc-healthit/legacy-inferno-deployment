@@ -26,6 +26,7 @@ services:
       - ./site-overlay/landing.erb:/var/www/inferno/lib/app/views/landing.erb
       # config file
       - ./community-config.yml:/var/www/inferno/config.yml
+      - ./community-db.config.yml:/var/www/inferno/db/config.yml
       # terminology data
       - ./bloom:/var/www/inferno/resources/terminology/validators/bloom
     # run the application
