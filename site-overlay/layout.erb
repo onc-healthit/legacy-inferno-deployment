@@ -76,8 +76,30 @@
     </nav>
     <% end %>
     <script type="text/javascript">
-      if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
-        alert('Inferno does not currently support Internet Explorer.  Please switch to another browser, such as Chrome, Firefox, Safari, or Edge.');
+
+      /* Cannot put this in app.js because that may not be parseable by older IEs */
+      /* Show alert for IE10 and below */
+
+      function getIEVersion(){
+          var agent = navigator.userAgent;
+          var reg = /MSIE\s?(\d+)(?:\.(\d+))?/i;
+          var matches = agent.match(reg);
+          if (matches != null) {
+              return { major: matches[1], minor: matches[2] };
+          }
+          return { major: "-1", minor: "-1" };
+      }
+
+      function alertIfUnsupportedBrowser(){
+        var ieVersion =  getIEVersion();
+
+        if(ieVersion.major !== "-1"){
+          alert('Inferno does not currently support Internet Explorer 10 or earlier.  Please switch to another browser, such as Chrome, Firefox, Safari, or Edge.');
+        }
+      }
+
+      alertIfUnsupportedBrowser();
+
     </script>
 
     <%= yield %>
