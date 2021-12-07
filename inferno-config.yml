@@ -46,7 +46,7 @@ external_resource_validator_url: http://validator_service:4567
 
 # The expected version of the external validator. The app will display a warning if
 # the found version doesn't match the expected version exactly.
-external_resource_validator_version: '1.2.0'
+external_resource_validator_version: '1.2.1'
 
 # module options: one or more must be set.  The first option in the list will be checked by default
 modules:
