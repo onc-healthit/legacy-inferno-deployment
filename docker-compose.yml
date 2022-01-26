@@ -68,7 +68,7 @@ services:
     restart: unless-stopped
     cpuset: '2,3'
   validator_service:
-    image: infernocommunity/fhir-validator-service:v1.2.1
+    image: infernocommunity/fhir-validator-service:v2.1.0
     mem_limit: 1500m
     restart: unless-stopped
     cpuset: '2,3'
