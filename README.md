@@ -32,12 +32,6 @@ Docker is not installed on the EC2 image by default but it is available from the
 
 Follow the instructions [from AWS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html#install_docker) to complete setting up Docker.
 
-## Install Docker Compose
-
-Docker Compose is not installed with the Docker tool but it is available from the `pip` library.
-
-`sudo pip install docker-compose`
-
 ## Install Git
 
 The code is available from git. Git needs to be installed on the Amazon image before you can use it. 
@@ -86,13 +80,13 @@ For development setups, you will need to either create the `/etc/ssl/certs/infer
 
 The server can be started by using docker compose, which boots both the Ruby server and the NGINX server to front it. 
 
-`docker-compose up -d`
+`docker compose up -d`
 
 This starts the servers in the background (detatched).
 
 To stop the servers, run:
 
-`docker-compose down`
+`docker compose down`
 
 If you receive an error regarding nginx being denied mounting to `/etc/ssl/certs/inferno`, then you haven't created the directory for the certificates.  If you are running this on a development machine, you may update the `docker-compose.yml` file to `./nginx/development-certs`.  See [the readme on certificates](nginx/development-certs) for more information.
 
@@ -109,11 +103,11 @@ From here, follow the instructions to update the submodule, build the docker ima
 For routine redeployments, the following commands should be run:
 
 ```bash
-docker-compose down
+docker compose down
 git pull
 make git_update
 make inferno_docker_rebuild
-docker-compose up -d
+docker compose up -d
 ```
 
 ## Testing locally
@@ -127,4 +121,4 @@ and
 
 `- ./nginx/development-certs:/etc/ssl/certs/inferno:ro` should be uncommented.
 
-once that's done you can start it with `docker-compose up -d`.
+once that's done you can start it with `docker compose up -d`.
