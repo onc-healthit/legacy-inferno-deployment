@@ -1,3 +1,7 @@
+### ⚠️ This repository is no longer active and has been replaced by the [Inferno Platform Template](https://github.com/inferno-framework/inferno-platform-template). ###
+
+---
+
 This repository contains support files to install the Inferno testing tool onto an AWS EC2 instance. 
 
 # Overlay Structure
